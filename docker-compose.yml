@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: event-app-kai:latest
+    container_name: event-app-kai-container
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/event_app
+    depends_on:
+      - mongo
+    command: ['yarn', 'dev']
+
+  mongo:
+    image: mongo:latest
+    container_name: my-mongo-container
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

@@ -1,0 +1,77 @@
+{
+  "extends": [
+    "airbnb-typescript/base",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [
+            "@",
+            "./src"
+          ]
+        ],
+        "extension": [
+          ".ts",
+          ".js"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": 0,
+    "no-underscore-dangle": 0,
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-use-before-define": [
+      "error",
+      {
+        "variables": false
+      }
+    ],
+    "linebreak-style": 0,
+    "eqeqeq": "off",
+    "no-multi-str": 0,
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "prefer-destructuring": 0,
+    "quotes": "off",
+    "consistent-return": "off",
+    "max-len": "off",
+    "camelcase": "off",
+    "object-curly-newline": "off",
+    "nonblock-statement-body-position": [
+      "error",
+      "any",
+      {
+        "overrides": {
+          "while": "below",
+          "do": "any",
+          "for": "below"
+        }
+      }
+    ],
+    "curly": [
+      "error",
+      "multi-or-nest",
+      "consistent"
+    ],
+    "radix": "off",
+    "no-param-reassign": "off"
+  }
+}
